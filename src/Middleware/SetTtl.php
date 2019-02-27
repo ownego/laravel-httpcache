@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Barryvdh\HttpCache\Middleware;
 
@@ -21,7 +21,7 @@ class SetTtl
         $response = $next($request);
 
         if ($response instanceof Response && $request instanceof Request && $request->isMethodCacheable()) {
-            $response->setTtl($seconds);
+            $response->setClientTtl($seconds);
         }
 
         return $response;
