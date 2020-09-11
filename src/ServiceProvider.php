@@ -39,7 +39,7 @@ class ServiceProvider extends BaseServiceProvider
         $app['http_cache.options'] = array_replace(
             array(
                 'debug' => $app['config']->get('app.debug'),
-            ), $app['config']->get('httpcache.options')
+            ), $app['config']->get('httpcache.options', [])
         );
 
         $app['http_cache.cache_dir'] = $app['config']->get('httpcache.cache_dir');
